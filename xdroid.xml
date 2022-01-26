@@ -12,8 +12,12 @@
         fetch="https://gitlab.com/xyzuan/"
         revision="eleven"/>
 
+<remote name="xdroid_mojito"
+        fetch="https://github.com/xdCAF-mojito"
+        revision="eleven"/>
+
 <!-- Build Repo -->
-  <project path="build/make" name="xd_build_make" remote="xdroid" >
+  <project path="build/make" name="xd_build_make" remote="xdroid_mojito" >
 	   <copyfile src="core/root.mk" dest="Makefile"/>
 	   <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk"/>
 	   <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default"/>
@@ -22,8 +26,8 @@
 	   <linkfile src="target" dest="build/target"/>
 	   <linkfile src="tools" dest="build/tools"/>
   </project>
-  <project path="build/blueprint" name="xd_build_blueprint" remote="xdroid"/>
-  <project path="build/soong" name="xd_build_soong" remote="xdroid" >
+  <project path="build/blueprint" name="xd_build_blueprint" remote="xdroid_mojito"/>
+  <project path="build/soong" name="xd_build_soong" remote="xdroid_mojito" >
 	   <linkfile src="root.bp" dest="Android.bp"/>
 	   <linkfile src="bootstrap.bash" dest="bootstrap.bash"/>
   </project>
@@ -36,31 +40,31 @@
 
   <!-- External Repo -->
   <project path="external/arm-optimized-routines" name="xd_external_arm-optimized-routines" remote="xdroid"/>
-  <project path="external/cldr" name="xd_external_cldr" remote="xdroid" clone-depth="1"/>
+  <project path="external/cldr" name="xd_external_cldr" remote="xdroid_mojito" clone-depth="1"/>
   <project path="external/exfat" name="xd_external_exfat" remote="xdroid" />
-  <project path="external/icu" name="xd_external_icu" remote="xdroid" clone-depth="1"/>
-  <project path="external/iptables" name="xd_external_iptables" remote="xdroid"/>
-  <project path="external/libcxx" name="xd_external_libcxx" remote="xdroid"/>
-  <project path="external/libpng" name="xd_external_libpng" remote="xdroid"/>
+  <project path="external/icu" name="xd_external_icu" remote="xdroid_mojito" clone-depth="1"/>
+  <project path="external/iptables" name="xd_external_iptables" remote="xdroid_mojito"/>
+  <project path="external/libcxx" name="xd_external_libcxx" remote="xdroid_mojito"/>
+  <project path="external/libpng" name="xd_external_libpng" remote="xdroid_mojito"/>
   <project path="external/motorola/faceunlock" name="xd_external_motorola_faceunlock" remote="xyzuan-gitlab"/>
-  <project path="external/nos/host/generic" name="xd_external_nos_host_generic" remote="xdroid"/>
-  <project path="external/scudo" name="xd_external_scudo" remote="xdroid"/>
-  <project path="external/tinycompress" name="xd_external_tinycompress" remote="xdroid"/>
-  <project path="external/zlib" name="xd_external_zlib" remote="xdroid"/>
-  <project path="external/json-c" name="xd_external_json-c" remote="xdroid"/>
-  <project path="external/wpa_supplicant_8" name="xd_external_wpa_supplicant_8" remote="xdroid"/>
+  <project path="external/nos/host/generic" name="xd_external_nos_host_generic" remote="xdroid_mojito"/>
+  <project path="external/scudo" name="xd_external_scudo" remote="xdroid_mojito"/>
+  <project path="external/tinycompress" name="xd_external_tinycompress" remote="xdroid_mojito"/>
+  <project path="external/zlib" name="xd_external_zlib" remote="xdroid_mojito"/>
+  <project path="external/json-c" name="xd_external_json-c" remote="xdroid_mojito"/>
+  <project path="external/wpa_supplicant_8" name="xd_external_wpa_supplicant_8" remote="xdroid_mojito"/>
 
   <!-- Framework Repo -->
-  <project path="frameworks/av" name="xd_frameworks_av" remote="xdroid"/>
-  <project path="frameworks/base" name="xd_frameworks_base" remote="xdroid"/>
-  <project path="frameworks/native" name="xd_frameworks_native" remote="xdroid"/>
-  <project path="frameworks/opt/telephony" name="xd_frameworks_opt_telephony" remote="xdroid"/>
-  <project path="frameworks/opt/net/ims" name="xd_frameworks_opt_net_ims" remote="xdroid"/>
-  <project path="frameworks/opt/net/wifi" name="xd_frameworks_opt_net_wifi" remote="xdroid"/>
-  <project path="frameworks/opt/timezonepicker" name="xd_frameworks_opt_timezonepicker" remote="xdroid"/>
+  <project path="frameworks/av" name="xd_frameworks_av" remote="xdroid_mojito"/>
+  <project path="frameworks/base" name="xd_frameworks_base" remote="xdroid_mojito"/>
+  <project path="frameworks/native" name="xd_frameworks_native" remote="xdroid_mojito"/>
+  <project path="frameworks/opt/telephony" name="xd_frameworks_opt_telephony" remote="xdroid_mojito"/>
+  <project path="frameworks/opt/net/ims" name="xd_frameworks_opt_net_ims" remote="xdroid_mojito"/>
+  <project path="frameworks/opt/net/wifi" name="xd_frameworks_opt_net_wifi" remote="xdroid_mojito"/>
+  <project path="frameworks/opt/timezonepicker" name="xd_frameworks_opt_timezonepicker" remote="xdroid_mojito"/>
 
   <!-- Hardware Repo -->
-  <project path="hardware/interfaces" name="xd_hardware_interfaces" remote="xdroid"/>
+  <project path="hardware/interfaces" name="xd_hardware_interfaces" remote="xdroid_mojito"/>
   <project path="hardware/xdroid/interfaces" name="xd_hardware_xdroid_interfaces" remote="xdroid"/>
   <project path="hardware/qcom-caf/wlan" name="xd_hardware_qcom_wlan" remote="xdroid"/>
   <project path="hardware/libhardware" name="xd_hardware_libhardware" remote="xdroid"/>
@@ -77,20 +81,20 @@
   <project path="hardware/qcom-caf/sm8150/display" name="hw_display_sm8150" revision="eleven_caf_sm8150" remote="xyz-prjkt"/>
 
   <!-- Packages Repo -->
-  <project path="packages/apps/Bluetooth" name="xd_packages_apps_Bluetooth" remote="xdroid"/>
-  <project path="packages/apps/CellBroadcastReceiver" name="xd_packages_apps_CellBroadcastReceiver" remote="xdroid"/>
-  <project path="packages/apps/Settings" name="xd_packages_apps_Settings" remote="xdroid"/>
-  <project path="packages/apps/SettingsIntelligence" name="xd_packages_apps_SettingsIntelligence" remote="xdroid"/>
+  <project path="packages/apps/Bluetooth" name="xd_packages_apps_Bluetooth" remote="xdroid_mojito"/>
+  <project path="packages/apps/CellBroadcastReceiver" name="xd_packages_apps_CellBroadcastReceiver" remote="xdroid_mojito"/>
+  <project path="packages/apps/Settings" name="xd_packages_apps_Settings" remote="xdroid_mojito"/>
+  <project path="packages/apps/SettingsIntelligence" name="xd_packages_apps_SettingsIntelligence" remote="xdroid_mojito"/>
   <project path="packages/apps/Xzrypr" name="xd_packages_apps_Xzrypr" remote="xdroid"/>
   <project path="packages/apps/Plugins" name="xd_packages_apps_Plugins" remote="xdroid"/>
-  <project path="packages/apps/ThemePicker" name="xd_packages_apps_ThemePicker" remote="xdroid"/>
+  <project path="packages/apps/ThemePicker" name="xd_packages_apps_ThemePicker" remote="xdroid_mojito"/>
   <project path="packages/apps/Updater" name="xd_packages_apps_Updater" remote="xdroid"/>
   <project path="packages/apps/SoftAPManager" name="xd_packages_apps_SoftAPManager" remote="xdroid"/>
   <project path="packages/apps/GamingMode" name="xd_packages_apps_GamingMode" remote="xdroid"/>
   <project path="packages/apps/Nfc" name="xd_packages_apps_Nfc" remote="xdroid"/>
-  <project path="packages/providers/ContactsProvider" name="xd_packages_providers_ContactsProvider" remote="xdroid"/>
-  <project path="packages/providers/TelephonyProvider" name="xd_packages_providers_TelephonyProvider" remote="xdroid"/>
-  <project path="packages/services/Telephony" name="xd_packages_services_Telephony" remote="xdroid"/>
+  <project path="packages/providers/ContactsProvider" name="xd_packages_providers_ContactsProvider" remote="xdroid_mojito"/>
+  <project path="packages/providers/TelephonyProvider" name="xd_packages_providers_TelephonyProvider" remote="xdroid_mojito"/>
+  <project path="packages/services/Telephony" name="xd_packages_services_Telephony" remote="xdroid_mojito"/>
 
   <!-- Prebuilts Repo -->
   <project path="prebuilts/abi-dumps/ndk" name="xd_prebuilts_abi-dumps_ndk" remote="xdroid"/>
@@ -111,19 +115,19 @@
   <project path="system/libufdt" name="xd_system_libufdt" remote="xdroid"/>
   <project path="system/timezone" name="xd_system_timezone" remote="xdroid"/>
   <project path="system/update_engine" name="xd_system_update_engine" remote="xdroid"/>
-  <project path="system/vold" name="xd_system_vold" remote="xdroid"/>
+  <project path="system/vold" name="xd_system_vold" remote="xdroid_mojito"/>
   <project path="system/sepolicy" name="xd_system_sepolicy" remote="xdroid"/>
   <project path="system/netd" name="xd_system_netd" remote="xdroid"/>
 
   <!-- Vendor Repo -->
-  <project path="vendor/xdroid" name="xd_vendor_xdroid" remote="xdroid"/>
+  <project path="vendor/xdroid" name="xd_vendor_xdroid" remote="xdroid_mojito"/>
   <project path="vendor/xdroidui" name="xd_vendor_xdroidui" remote="xdroid"/>
   <project path="vendor/qcom/opensource/usb" name="xd_vendor_qcom_opensource_usb" remote="xdroid"/>  
-  <project path="vendor/qcom/opensource/commonsys/system/bt" name="xd_vendor_qcom_opensource_commonsys_system_bt" remote="xdroid"/>
-  <project path="vendor/qcom/opensource/commonsys/packages/apps/Bluetooth" name="xd_vendor_qcom_opensource_commonsys_packages_apps_Bluetooth" remote="xdroid" revision="eleven-qti"/>
+  <project path="vendor/qcom/opensource/commonsys/system/bt" name="xd_vendor_qcom_opensource_commonsys_system_bt" remote="xdroid_mojito"/>
+  <project path="vendor/qcom/opensource/commonsys/packages/apps/Bluetooth" name="xd_vendor_qcom_opensource_commonsys_packages_apps_Bluetooth" remote="xdroid_mojito" revision="eleven-qti"/>
   <project path="vendor/codeaurora/commonsys/telephony" name="xd_vendor_codeaurora_commonsys_telephony" remote="xdroid"/>
   <project path="vendor/qcom/opensource/commonsys-intf/bluetooth" name="xd_vendor_qcom-opensource_bluetooth-commonsys-intf" remote="xdroid"/>
-  <project path="vendor/qcom/opensource/interfaces" name="xd_vendor_qcom_opensource_interfaces" remote="xdroid"/>
+  <project path="vendor/qcom/opensource/interfaces" name="xd_vendor_qcom_opensource_interfaces" remote="xdroid_mojito"/>
   <project path="vendor/qcom/opensource/power" name="xd_vendor_qcom_opensource_power" remote="xdroid"/>
   <project path="vendor/qcom/sdclang" name="xd_vendor_qcom_sdclang" remote="xdroid" clone-depth="1"/>
   <project path="vendor/google/gms" name="xdroid_vendor_google_gms" remote="xyzuan-gitlab"/>
